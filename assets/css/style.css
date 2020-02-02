@@ -1,0 +1,73 @@
+body {
+			background-image: url(assets/img/Totoro.jpg);
+            background-position: center;
+			background-attachment: fixed;
+			font-family: "Bookman Old Style", Bookman, san-serif;
+			font-weight: bold;
+			color: white;
+			font-size: large;
+		}
+		h1 {
+			text-shadow: transparent;
+		}
+		p {
+			text-align: justify;
+		}
+		header {
+			padding-top: 100px;
+			padding-bottom: 100px;
+			text-align: center;
+		}
+		#search {
+			padding-left: 38%;
+		}
+		.icon-bar{
+			position: fixed;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+			z-index: 1;
+		}
+		.icon-bar a{
+			display: block;
+			text-align: center;
+			padding: 17px;
+			transition: all 0.3s ease;
+			color: white;
+			font-size: 20px;
+		}
+		.icon-bar a:hover {
+			background-color: #000;
+		}
+		.facebook {
+			background: #3B5998;
+			color:white;
+		}
+		.instagram {
+			background-color:#833AB4;
+			color:white;
+		}
+		.google {
+			background-color: #dd4b39;
+			color: white;
+		}
+		.youtube {
+			background-color: #bb0000;
+			color: white;
+		}
+		.github {
+			background-color: #211F1F;
+			color:white;
+		}
+		#second button{
+			width: 100%;
+		}
+		footer {
+			padding-bottom: 50px;
+		}
+		@media only screen and (max-width: 600px) {
+			#txt {
+				display: none;
+			}
+		}
