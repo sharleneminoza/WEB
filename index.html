@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<title>My Portfolio</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,68 +10,64 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawStuff);
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>	
+<script>
+window.onload = function () {
+	var charr = new CanvasJS.Chart("chartContainerr", {
+	animationEnabled: true,
+	title:{
+		text: "Daily Task",
+		horizontalAlign: "left"
+	},
+	data: [{
+		type: "doughnut",
+		startAngle: 60,
+		innerRadius: 50,
+		indexLabelFontSize: 17,
+		indexLabel: "{label} - #percent%",
+		toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+		dataPoints: [
+			{ y: 9, label: "School" },
+			{ y: 2, label: "Eat" },
+			{ y: 8, label: "Sleep" },
+			{ y: 3, label: "Commute"},
+			{ y: 2, label: "Exercise"},
+			{ y: 3, label: "Recreational Activities"}
+		]
+	}]
+});
+var charrr = new CanvasJS.Chart("chartContainerrr", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Programming Skills"
+	},
+	axisY: {
+		title: "Mastery Level"
+	},
+	data: [{        
+		type: "column",
+		dataPoints: [      
+			{ y: 85, label: "HTML" },
+			{ y: 75,  label: "CSS" },
+			{ y: 25,  label: "JavaScript" },
+			{ y: 65,  label: "Bootstrap" },
+			{ y: 35,  label: "JQuery" },
+			{ y: 55, label: "PHP" },
+			{ y: 50,  label: "MySQL" },
+			{ y: 30,  label: "C" },
+		]
+	}]
+});
+charr.render();
+charrr.render();
+};
 
-      function drawStuff() {
-        var data = new google.visualization.arrayToDataTable([
-          ['Languages', 'Percentage'],
-          ["HTML", 78],
-          ["CSS", 77],
-          ["JavaScript", 20],
-          ["Git", 65],
-          ["PHP", 40],
-          ["MySQL", 40],
-        ]);
-
-        var options = {
-          title: 'Programming Languages',
-          width: 500,
-          legend: { position: 'none' },
-          chart: { title: 'Programming Languages',
-                   subtitle: 'mastery by percentage' },
-          bars: 'vertical', // Required for Material Bar Charts.
-          axes: {
-            x: {
-              0: { side: 'below', label: 'category'} // below x-axis.
-            }
-          },
-          bar: { groupWidth: "90%" }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-        chart.draw(data, options);
-      };
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['School',     9],
-          ['Eat',      3],
-          ['Commute',  2],
-          ['Excercise', 2],
-          ['Sleep',    8],
-          ['Recreational',    2],
-        ]);
-
-        var options = {
-          title: 'My Daily Activities',
-          pieHole: 0.4,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      };
-
-		$(document).ready(function(){
-		  $('[data-toggle="popover"]').popover();
-		});
 </script>
 <style>
-
+html{
+	scroll-behavior: smooth;
+}
 .paral {
 min-height: 600px;
 background-attachment: fixed;
@@ -234,12 +230,12 @@ color: blue;
 	<div class="row">
 		<div class="col-lg-6 p-5">
 			<center>
-				<div id="donutchart" style="width: 500px; height: 400px;"></div>
+				<div id="chartContainerr" style="width: 500px; height: 400px;"></div>
 			</center>
 		</div>
 		<div class="col-lg-6 p-5">
 			<center>
-    			<div id="top_x_div" style="width: 500px; height: 400px;"></div>
+    			<div id="chartContainerrr" style="width: 500px; height: 400px;"></div>
     		</center>
 		</div>
 	</div>
@@ -259,7 +255,11 @@ color: blue;
 			<h4 class="display-3">Awards:</h4>
 			<hr>
 			<p class="lead">  
-
+				<i class="fa fa-arrow-circle-right"></i> Most Responsible <b>(Elementary)</b><br>
+				<i class="fa fa-arrow-circle-right"></i> Honor Student <b>(JHS & SHS)</b><br>
+				<i class="fa fa-arrow-circle-right"></i> Programmer of the Year <b>(SHS)</b><br>
+				<i class="fa fa-arrow-circle-right"></i> Perfect Attendance Award <b>(SHS)</b><br>
+				<i class="fa fa-arrow-circle-right"></i> Statistician of the Year <b>(SHS)</b><br>
 			</p>
 		</div>
 	</div>
