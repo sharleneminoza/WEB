@@ -22,8 +22,8 @@ window.onload = function () {
 	data: [{
 		type: "doughnut",
 		startAngle: 60,
-		innerRadius: 50,
-		indexLabelFontSize: 17,
+		innerRadius: 60,
+		indexLabelFontSize: 14,
 		indexLabel: "{label} - #percent%",
 		toolTipContent: "<b>{label}:</b> {y} (#percent%)",
 		dataPoints: [
@@ -31,8 +31,7 @@ window.onload = function () {
 			{ y: 2, label: "Eat" },
 			{ y: 8, label: "Sleep" },
 			{ y: 3, label: "Commute"},
-			{ y: 2, label: "Exercise"},
-			{ y: 3, label: "Recreational Activities"}
+			{ y: 2, label: "Recreational Activities"},
 		]
 	}]
 });
@@ -62,7 +61,9 @@ var charrr = new CanvasJS.Chart("chartContainerrr", {
 charr.render();
 charrr.render();
 };
-
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
 </script>
 <style>
 html{
@@ -226,16 +227,16 @@ color: blue;
 	</div>
 </div>
 
-<div class="container-fluid" id="skills">
+<div class="container" id="skills">
 	<div class="row">
-		<div class="col-lg-6 p-5">
+		<div class="col-lg-6 p-5 fluid">
 			<center>
-				<div id="chartContainerr" style="width: 500px; height: 400px;"></div>
+				<div id="chartContainerr" style="width: 90%; height: 400px;"></div>
 			</center>
 		</div>
-		<div class="col-lg-6 p-5">
+		<div class="col-lg-6 p-5 fluid">
 			<center>
-    			<div id="chartContainerrr" style="width: 500px; height: 400px;"></div>
+    			<div id="chartContainerrr" style="width: 90%; height: 400px;"></div>
     		</center>
 		</div>
 	</div>
